@@ -1,6 +1,6 @@
 # blog/.vuepress/theme/
 blog/.vuepress/archive/theme/
 node_modules/
-dist/
+# dist/
 yarn-error.log
 node_modules
