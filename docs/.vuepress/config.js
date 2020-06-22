@@ -2,7 +2,7 @@ const sidebar = require('./nav/sidebar')
 
 module.exports = (ctx) => ({
   postcss: {
-    plugins: [require('tailwindcss'), require('autoprefixer')]
+    plugins: [require('tailwindcss'), require('autoprefixer')],
   },
 
   chainWebpack: (config) => {
@@ -12,12 +12,13 @@ module.exports = (ctx) => ({
   },
 
   lang: 'en-US',
-  title: 'Memorandum',
-  description: 'Keep knowledge safe',
+  title: 'ewilan-riviere.github.io',
+  description: 'Documentation about ewilan-riviere projects',
   head: [['link', { rel: 'icon', href: '/favicon.ico' }]],
   theme: '@vuepress/vue',
   themeConfig: {
-    repo: 'ewilan-riviere/memorandum',
+    logo: '/images/logo/book-documentation-min.png',
+    repo: 'ewilan-riviere',
     editLinks: false,
     smoothScroll: true,
     label: 'English',
@@ -29,27 +30,35 @@ module.exports = (ctx) => ({
     sidebar: {
       '/documentation/': sidebar.getDocumentationSidebar(
         '',
-        'Dependencies Badges'
-      )
-      // '/games/': sidebar.getGamesSidebar('Animal Crossings', 'Oxygen Not Included'),
+        'Vue Dependencies badges'
+      ),
+      '/about/': sidebar.getAboutSidebar(''),
       // '/safe/': sidebar.getSafeSidebar('Safe', 'SSH'),
       // '/projects/': sidebar.getProjectSidebar('Projects', 'Portfolio'),
-    }
+    },
   },
   plugins: [
     ['@vuepress/back-to-top', true],
-    ['@dovyp/vuepress-plugin-clipboard-copy', true]
+    ['@dovyp/vuepress-plugin-clipboard-copy', true],
+    [
+      'vuepress-plugin-clean-urls',
+      {
+        normalSuffix: '/',
+        indexSuffix: '/',
+        notFoundPath: '/404.html',
+      },
+    ],
   ],
   extraWatchFiles: ['.vuepress/nav/nav.js', '.vuepress/nav/sidebar.js'],
   configureWebpack: {
     resolve: {
       alias: {
-        '@images': 'docs/.vuepress/images'
-      }
-    }
+        '@images': 'docs/.vuepress/images',
+      },
+    },
   },
   markdown: {
     // lineNumbers: true,
-    anchor: { permalink: false }
-  }
+    anchor: { permalink: false },
+  },
 })

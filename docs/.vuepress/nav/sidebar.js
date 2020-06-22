@@ -1,31 +1,26 @@
 module.exports = {
-  getDocumentationSidebar: (main, dependenciesBadges) => {
+  getDocumentationSidebar: (main, vueDependenciesBadges) => {
     return [
       {
         title: main,
         collapsable: false,
-        children: ['']
+        children: [''],
       },
       {
-        title: dependenciesBadges,
+        title: vueDependenciesBadges,
         collapsable: true,
-        children: ['']
-      }
+        children: ['vue-dependencies-badges/'],
+      },
     ]
   },
-  getGamesSidebar: (animalCrossings, oxygenNotIncluded) => {
+  getAboutSidebar: (main) => {
     return [
       '',
-      {
-        title: animalCrossings,
-        collapsable: true,
-        children: ['animal-crossings/']
-      },
-      {
-        title: oxygenNotIncluded,
-        collapsable: true,
-        children: ['oni-useful-links']
-      }
+      // {
+      //   title: main,
+      //   collapsable: true,
+      //   children: ['animal-crossings/'],
+      // },
     ]
   },
   getSafeSidebar: (main, ssh) => {
@@ -33,8 +28,8 @@ module.exports = {
       {
         title: main,
         collapsable: false,
-        children: ['', 'ssh-keys']
-      }
+        children: ['', 'ssh-keys'],
+      },
     ]
   },
   getProjectSidebar: (main, portfolio) => {
@@ -43,8 +38,8 @@ module.exports = {
       {
         title: portfolio,
         collapsable: true,
-        children: ['portfolio/setup']
-      }
+        children: ['portfolio/setup'],
+      },
     ]
-  }
+  },
 }

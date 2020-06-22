@@ -1,4 +1,5 @@
 !.vuepress
+docs/.vuepress/dist
 .temp
 docs-dist
 node_modules

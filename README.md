@@ -11,7 +11,10 @@ Push content to GitHub, `/dist` folder is not .gitignore, it's normal, we need i
 
 ```bash
 # Push subtree with dist/ folder to master branch
-git subtree push --prefix dist origin master
+git subtree push --prefix docs/.vuepress/dist origin master
+
+git subtree push --prefix docs/.vuepress/dist origin master
+git push origin `git subtree split --prefix docs/.vuepress/dist master`:master --force
 ```
 
 GitHub pages use master branch to deploy app, no need to push all application on this branch, just `dist/` folder after `build` command.

@@ -7,7 +7,13 @@ module.exports = {
     parser: 'babel-eslint',
   },
   extends: ['plugin:vue/recommended', 'plugin:prettier/recommended'],
-  plugins: ['vue', 'prettier'],
+  plugins: ['vue', 'prettier', 'markdown'],
+  overrides: [
+    {
+      files: ['**/*.md'],
+      processor: 'markdown/markdown',
+    },
+  ],
   rules: {
     'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',

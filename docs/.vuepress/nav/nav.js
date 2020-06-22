@@ -1,12 +1,12 @@
 module.exports = [
   {
     text: 'Documentation',
-    link: '/documentation/'
-  }
-  // {
-  //   text: 'Theme',
-  //   link: '/theme/'
-  // },
+    link: '/documentation/',
+  },
+  {
+    text: 'About',
+    link: '/about/',
+  },
   // {
   // text: 'Learn More',
   // ariaLabel: 'Learn More',

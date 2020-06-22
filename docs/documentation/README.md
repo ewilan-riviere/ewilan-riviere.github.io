@@ -1,6 +1,5 @@
-# Introduction
+# Home
 
-![memorandum](/logo.png)
+<img-cp source="/images/logo/book-documentation.png" :size="200" />
 
-> Welcome to **Memorandum**, I'm **Memo**, the AI of this documentation.  
-> What do you want today ?
+- [**Vue Dependencies badges**](vue-dependencies-badges)
