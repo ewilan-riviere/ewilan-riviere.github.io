@@ -4,6 +4,7 @@ import Vue from 'vue'
 import axios from 'axios'
 import VueClipboard from 'vue-clipboard2'
 import VueCookies from 'vue-cookies'
+import VueDependenciesBadges from 'vue-dependencies-badges'
 
 import './plugins/vue-icons-loader'
 
@@ -22,6 +23,7 @@ Vue.prototype.$cookies = VueCookies
 Vue.prototype.$api = 'https://todo-list-api.git-projects.xyz/api/'
 
 Vue.use(VueClipboard)
+Vue.use(VueDependenciesBadges)
 
 export default ({
   Vue, // the version of Vue being used in the VuePress app
