@@ -8,17 +8,7 @@ export default theme({
   // Global CSS (https://go.nuxtjs.dev/config-css)
   css: ['../../../../assets/css/app.css'],
   plugins: [{ src: '../../../../plugins/vue-tailwind-screens', ssr: false }],
-  purge: {
-    content(contentDefaults) {
-      const addFiles = [
-        '../../../../assets/css/app.css',
-        '../../../../components/global/vtsh-example.vue',
-      ]
-      addFiles.forEach((file) => {
-        contentDefaults.push(file)
-      })
-    },
-  },
+
   i18n: {
     locales: () => [
       {
@@ -60,7 +50,29 @@ export default theme({
     },
   },
   tailwindcss: {
+    purge: {
+      content(contentDefaults) {
+        const addFiles = [
+          '../../../../assets/css/app.css',
+          '../../../../components/global/vtsh-example.vue',
+        ]
+        addFiles.forEach((file) => {
+          contentDefaults.push(file)
+        })
+      },
+    },
     config: {
+      purge: {
+        content(contentDefaults) {
+          const addFiles = [
+            '../../../../assets/css/app.css',
+            '../../../../components/global/vtsh-example.vue',
+          ]
+          addFiles.forEach((file) => {
+            contentDefaults.push(file)
+          })
+        },
+      },
       plugins: [tailwindTypography],
     },
   },
