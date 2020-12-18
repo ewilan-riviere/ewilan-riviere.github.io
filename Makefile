@@ -12,7 +12,7 @@ gitpush:
 	sed -i -e 's/^# deploy/deploy/g' .gitignore
 	git add .
 	git commit -am "wip deploy"
-	cd deploy
+	
 	rm -rf deploy/* ; rm -rf deploy/.*
 	cd ..
 	git add .
