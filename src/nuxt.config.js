@@ -3,21 +3,32 @@ import tailwindTypography from '@tailwindcss/typography'
 
 export default theme({
   docs: {
-    primaryColor: '#E24F55'
+    primaryColor: '#E24F55',
   },
   // Global CSS (https://go.nuxtjs.dev/config-css)
   css: ['../../../../assets/css/app.css'],
-  plugins: [
-    { src: '../../../../plugins/vue-tailwind-screens', ssr: false },
-  ],
+  plugins: [{ src: '../../../../plugins/vue-tailwind-screens', ssr: false }],
+  purge: {
+    content(contentDefaults) {
+      const addFiles = [
+        '../../../../assets/css/app.css',
+        '../../../../components/global/vtsh-example.vue',
+      ]
+      addFiles.forEach((file) => {
+        contentDefaults.push(file)
+      })
+    },
+  },
   i18n: {
-    locales: () => [{
-      code: 'en',
-      iso: 'en-US',
-      file: 'en-US.js',
-      name: 'English'
-    }],
-    defaultLocale: 'en'
+    locales: () => [
+      {
+        code: 'en',
+        iso: 'en-US',
+        file: 'en-US.js',
+        name: 'English',
+      },
+    ],
+    defaultLocale: 'en',
   },
   content: {
     apiPrefix: '_content',
@@ -50,7 +61,7 @@ export default theme({
   },
   tailwindcss: {
     config: {
-      plugins: [tailwindTypography]
-    }
-  }
+      plugins: [tailwindTypography],
+    },
+  },
 })
