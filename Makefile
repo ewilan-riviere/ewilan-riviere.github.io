@@ -9,14 +9,15 @@ gitpush:
 	git add .
 	git commit -am "deploy"
 	git push origin `git subtree split --prefix deploy master`:master --force
-	sed -i -e 's/^# deploy/deploy/g' .gitignore
-	git add .
-	git commit -am "wip deploy"
 	
-	rm -rf deploy/* ; rm -rf deploy/.*
-	cd ..
-	git add .
-	git commit -am "end deploy"
+	# sed -i -e 's/^# deploy/deploy/g' .gitignore
+	# git add .
+	# git commit -am "wip deploy"
+
+	# rm -rf deploy/* ; rm -rf deploy/.*
+	# cd ..
+	# git add .
+	# git commit -am "end deploy"
 
 generate:
 	cd src ; yarn ; yarn generate ; cd ..
