@@ -1,8 +1,8 @@
 .PHONY: copy generate gitpush deploy
 
 copy:
-	rsync -rlpcgoDvzi --delete src/dist/ deploy/ --exclude-from 'exclude-list.txt'
-	
+	rsync -rlpcgoDvzi --delete src/dist/ deploy/
+	cp README.md deploy/
 
 gitpush:
 	sed -i -e 's/^deploy/# deploy/g' .gitignore
@@ -13,12 +13,12 @@ gitpush:
 	git add .
 	git commit -am "wip deploy"
 	cd deploy
-	rm -r `ls | grep -v "README.md\|.git"`
-	cd -
+	rm -rf deploy/*
+	cd ..
 	git add .
 	git commit -am "end deploy"
 
 generate:
-	cd src ; npm run generate ; cd -
+	cd src ; yarn ; yarn generate ; cd ..
 
-deploy:  copy gitpush
+deploy: generate copy gitpush
