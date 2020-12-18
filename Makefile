@@ -5,15 +5,13 @@ copy:
 	
 
 gitpush:
+	sed -i -e 's/# deploy\/*/deploy\/*/g' .gitignore
 	git add .
-	# git commit -am "deploy"; git subtree push --prefix=deploy origin master
 	git commit -am "deploy"
 	git push origin `git subtree split --prefix deploy master`:master --force
-	cd -
+	sed -i -e 's/deploy\/*/# deploy\/*/g' .gitignore
 
 generate:
 	cd src ; npm run generate ; cd -
 
 deploy: generate copy gitpush
-
-
