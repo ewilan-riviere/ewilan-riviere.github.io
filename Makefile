@@ -1,5 +1,11 @@
 .PHONY: copy generate gitpush deploy
 
+GIT_REMOTE='git@github.com:ewilan-riviere/ewilan-riviere.github.io.git'
+
+clean:
+	@echo "Bouyah GIT_REMOTE"
+	$(MAKE) -C deploy
+
 copy:
 	rsync -rlpcgoDvzi --delete src/dist/ deploy/
 	cp README.md deploy/
@@ -24,4 +30,4 @@ gitpush:
 generate:
 	cd src ; yarn ; yarn generate ; cd ..
 
-deploy: generate copy gitpush
+deploy: clean
