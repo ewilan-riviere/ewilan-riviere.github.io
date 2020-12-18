@@ -14,6 +14,6 @@ gitpush:
 generate:
 	cd src ; npm run generate ; cd -
 
-deploy: copy gitpush
+deploy: generate copy gitpush
 
 
