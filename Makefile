@@ -1,6 +1,7 @@
 .PHONY: copy generate gitpush deploy
 
 copy:
+	mkdir deploy
 	rsync -rlpcgoDvzi --delete src/dist/ deploy/
 	cp README.md deploy/
 
@@ -14,7 +15,7 @@ gitpush:
 	git add .
 	git commit -am "wip deploy"
 
-	rm -rf deploy/*
+	rm -rf deploy
 	cd ..
 	git add .
 	git commit -am "end deploy"
