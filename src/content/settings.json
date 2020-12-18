@@ -1,10 +1,10 @@
 {
-  "title": "Nuxt Content",
+  "title": "ewilan-riviere.github.io",
   "url": "",
   "logo": {
     "light": "/logo-light.svg",
     "dark": "/logo-dark.svg"
   },
-  "github": "nuxt/content",
-  "twitter": "@nuxt_js"
+  "github": "ewilan-riviere",
+  "twitter": "@ewieSwitch"
 }

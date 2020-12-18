@@ -10,6 +10,15 @@
   },
   "dependencies": {
     "@nuxt/content-theme-docs": "^0.8.0",
+    "@tailwindcss/typography": "^0.3.1",
     "nuxt": "^2.14.7"
+  },
+  "devDependencies": {
+    "vue-badges": "^0.1.2",
+    "vue-code-info": "^0.1.9",
+    "vue-gw-builds": "^0.0.12",
+    "vue-hamburgers": "^1.1.2",
+    "vue-tailwind-accordion": "^0.0.13",
+    "vue-tailwind-screens-helper": "^0.1.2"
   }
 }
