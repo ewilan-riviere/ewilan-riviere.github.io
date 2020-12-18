@@ -1,2 +1,2 @@
-deploy/**
-!deploy/README.md
+deploy/*
+!deploy/*README.md
