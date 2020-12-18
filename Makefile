@@ -5,7 +5,11 @@ copy:
 	
 
 gitpush:
-	git add . ; git commit -am "deploy"; git subtree push --prefix=deploy --force origin master; cd -
+	git add .
+	# git commit -am "deploy"; git subtree push --prefix=deploy origin master
+	git commit -am "deploy"
+	git push origin `git subtree split --prefix deploy master`:master --force
+	cd -
 
 generate:
 	cd src ; npm run generate ; cd -
