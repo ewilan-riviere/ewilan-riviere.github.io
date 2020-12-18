@@ -10,7 +10,7 @@ gitpush:
 	git commit -am "deploy"
 	git push origin `git subtree split --prefix deploy master`:master --force
 	sed -i -e 's/^# deploy/deploy/g' .gitignore
-	rsync -rlpcgoDvzi --delete src/dist/ deploy/ --exclude-from 'exclude-list.txt'
+	rm -r `ls | grep -v "README.md\|.git"`
 	git add .
 	git commit -am "end deploy"
 
