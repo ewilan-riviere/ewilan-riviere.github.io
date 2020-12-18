@@ -1,0 +1,32 @@
+{
+  "name": "ewilan-riviere.github.io",
+  "displayName": "ewilan-riviere.github.io",
+  "description": "GitHub page of ewilan-riviere",
+  "version": "1.0.0",
+  "keywords": [
+    "documentation",
+    "vue",
+    "glossary"
+  ],
+  "private": true,
+  "homepage": "https://ewilan-riviere.github.io/",
+  "license": "MIT",
+  "author": {
+    "name": "Ewilan Rivière",
+    "email": "ewilan@dotslashplay.it"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ewilan-riviere/ewilan-riviere.github.io"
+  },
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "@nuxt/content-theme-docs": "^0.8.0",
+    "nuxt": "^2.14.7"
+  }
+}
