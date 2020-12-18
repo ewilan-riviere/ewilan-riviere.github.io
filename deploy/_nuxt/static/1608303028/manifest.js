@@ -1,1 +1,0 @@
-__NUXT_JSONP__("manifest.js", {routes:["\u002F","\u002Freleases","\u002Fplugins\u002Fvue-tailwind-screens-helper","\u002Fplugins\u002Fvue-dependencies-badges","\u002Fplugins\u002Fvue-tailwind-accordion","\u002Fplugins\u002Fvuepress-code-info","\u002Fsetup"]})
