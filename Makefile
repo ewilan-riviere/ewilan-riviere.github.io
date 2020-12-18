@@ -13,7 +13,7 @@ gitpush:
 	git add .
 	git commit -am "wip deploy"
 	cd deploy
-	rm -rf deploy/*
+	rm -rf deploy/* ; rm -rf deploy/.*
 	cd ..
 	git add .
 	git commit -am "end deploy"
