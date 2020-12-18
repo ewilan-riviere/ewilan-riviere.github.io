@@ -10,7 +10,13 @@ gitpush:
 	git commit -am "deploy"
 	git push origin `git subtree split --prefix deploy master`:master --force
 	sed -i -e 's/^# deploy/deploy/g' .gitignore
-
+	git add .
+	git commit -am "wip deploy"
+	cd deploy
+	rm -r `ls | grep -v "README.md\|.git"`
+	cd -
+	git add .
+	git commit -am "end deploy"
 
 generate:
 	cd src ; npm run generate ; cd -
